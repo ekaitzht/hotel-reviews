@@ -10,6 +10,9 @@ export class ListItemComponent implements OnInit {
  @Input() hotel;
   reviews = [];
   openReview = false;
+  range = [1,2,3,4,5];
+  alreadyCalled = false;
+
 
   constructor(private hotelsService: HotelsService) { }
 
@@ -17,14 +20,19 @@ export class ListItemComponent implements OnInit {
   }
 
   loadHotelReviews(){
-
-  		this.hotelsService.loadHotelReviews(this.hotel.id)
-		.subscribe(
-			reviews => { 
-			 	this.reviews = reviews;
-			 	this.openReview = true;
-			}
-		);
+  		if(!this.alreadyCalled){
+  			this.hotelsService.loadHotelReviews(this.hotel.id)
+			.subscribe(
+				reviews => { 
+				 	this.reviews = reviews;
+				 	this.openReview = true;
+				 	this.alreadyCalled = true;
+				}
+			);
+  		} else{
+  			this.openReview = true;
+  		}
+  		
   }
 
   hideReviews(){

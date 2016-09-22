@@ -1,0 +1,24 @@
+:host{
+	display:flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	.positive-wrapper{
+
+    	margin-right: 20px;
+    	margin-bottom: 20px;
+    	.positive,.negative{
+    	    background-color: #E5E5E5;
+		    height: 50px;
+		    width: 50px;
+		    text-align: center;
+		    line-height: 50px;
+		    border-radius: 25px;
+    	}
+	}
+
+	.comment{
+		margin-top: 1rem;
+    	font-weight: 200;
+    	font-size: 0.8rem;
+	}
+}

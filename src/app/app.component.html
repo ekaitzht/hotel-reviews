@@ -1,4 +1,10 @@
-<div>
-	<button (click)='loadHotels()'>Load Hotels</button>
+<div class="load-hotels-wrapper">
+	<button class="load-hotels" (click)='loadHotels()'>Load Hotels</button>
+</div>
+<div class="loading-hotels" *ngIf="loadingHotels">
+	Loading hotels...
+</div>
+<div class="error-api" *ngIf="errorApi">
+	An error ocurred
 </div>
 <app-list [hotels]='hotels'></app-list>

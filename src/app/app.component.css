@@ -1,0 +1,18 @@
+.load-hotels-wrapper{
+    text-align: center;
+    margin: 50px
+}
+
+.loading-hotels{
+	text-align:center;
+}
+
+.error-api{
+	height: 80px;
+    background-color: #D8D8D8;
+    padding-left: 30px;
+    line-height: 80px;
+    margin-bottom: 1.6rem;
+    border-radius: 5px;
+    box-shadow:0 0 0 1px #BCBCBC,     0 0 0 2px #A6A6A6;
+}

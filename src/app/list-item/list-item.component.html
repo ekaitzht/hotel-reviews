@@ -1,59 +1,63 @@
-<div class="hotel">
-	<div class="image-hotel">
-
-	</div>
-	<div class="info-hotel">
-		<div class="header-info">
-			<div class="name-and-location">
-				<div class="name-hotel header-1">
-					{{hotel.name}}
-				</div>
-				<div class="location">
-					{{hotel.city}} {{hotel.country}}
-				</div>
-			</div>
-			<div class="stars" *ngFor="let star of hotel.stars; let i = index;">
-				<span *ngIf="i < star">&#9733;</span>
-				<span *ngIf="i >= star">&#9734;</span>
-			</div>
+<div class='card'>
+	<div class="hotel">
+		<div class="image-hotel">
 
 		</div>
+		<div class="info-hotel">
+			<div class="header-info">
+				<div class="name-and-location">
+					<div class="name-hotel header-1">
+						{{hotel.name}}
+					</div>
+					<div class="location">
+						{{hotel.city}} {{hotel.country}}
+					</div>
+				</div>
+				<div class='stars-wrapper reviews-wrapper-trasition'>
+					<div class="stars" *ngFor="let star of range; let i = index;">
+						<span *ngIf="i < hotel.stars">&#9733;</span>
+						<span *ngIf="i >= hotel.stars">&#9734;</span>
+					</div>
+				</div>
 
-		<div>
-			{{hotel.description}}
-		</div>
-		
-		<div class="footer-info">
-			<button *ngIf='!openReview' (click)="loadHotelReviews()" class="show-reviews">
-				Show reviews
-			</button>
+			</div>
 
-			<button *ngIf='openReview' (click)="hideReviews()" class="show-reviews">
-				Hide reviews
-			</button>
 			<div>
-				<div class="price">
-					{{hotel.price | currency:'EUR':true}}
-				</div>
-				<div class="date">
-					<div class="date-start">
-						{{hotel.date_start | date:'dd.MM.y'}}
+				{{hotel.description}}
+			</div>
+			
+			<div class="footer-info">
+				<button *ngIf='!openReview' (click)="loadHotelReviews()" class="show-reviews button">
+					Show reviews
+				</button>
+
+				<button *ngIf='openReview' (click)="hideReviews()" class="show-reviews">
+					Hide reviews
+				</button>
+				<div>
+					<div class="price">
+						{{hotel.price | currency:'EUR':true}}
 					</div>
-					<span>-</span>
-					<div class="date-end">
-						{{hotel.date_end | date:'dd.MM.y'}}
+					<div class="date">
+						<div class="date-start">
+							{{hotel.date_start | date:'dd.MM.y'}}
+						</div>
+						<span>-</span>
+						<div class="date-end">
+							{{hotel.date_end | date:'dd.MM.y'}}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
+		</div>
 	</div>
-</div>
-<div class="reviews-wrapper" [class.closed]='!openReview'>
-	<div class="review"  *ngFor="let review of reviews">
-		<app-review [review]='review'></app-review>
+	<div class=" reviews-wrapper-trasition" [class.closed]='!openReview' [class.reviews-wrapper]='openReview'>
+		<div class="review"  *ngFor="let review of reviews">
+			<app-review [review]='review'></app-review>
+		</div>
 	</div>
-</div>
+<div>
 
 
 
