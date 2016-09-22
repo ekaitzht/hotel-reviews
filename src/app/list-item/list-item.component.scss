@@ -1,0 +1,74 @@
+:host{
+	flex-direction:column;
+
+	height:300px;
+
+	.hotel{
+		border:1px solid rgba(176, 176, 176, 0.82);
+		display:flex;
+	}
+
+	.image-hotel{
+		width: 40%;
+    	background-image: url('../../assets/images/dummy-image.png');
+    	background-size:cover;
+
+	}
+
+	.info-hotel{
+		padding:2rem;
+		background-color:#F6F6F6;
+		width:60%;
+   		flex-direction: column;
+    	justify-content: space-between;
+	}
+
+
+
+	.header-info{
+	    display: flex;
+    	justify-content: space-between;
+    	margin-bottom:2rem;
+	}
+
+	.footer-info{
+	    display: flex;
+    	justify-content: space-between;
+    	margin-top: 2rem;
+	}
+
+	.show-reviews{
+	    width: 140px;
+    	font-weight: 500;
+    	font-size: 13px;
+    	height:40px;
+    	margin-bottom:2rem;
+
+	}
+
+	.price{
+		text-align:right;
+		font-size:20px;
+	}
+
+	.date{
+		margin-top:.6rem;
+		display:flex;
+		font-weight:200;
+		font-size:12px;
+	}
+
+	.reviews-wrapper {
+		overflow-y: hidden;
+		max-height: 500px; /* approximate max height */
+
+		transition-property: all;
+		transition-duration: 1s;
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	}
+
+	.reviews-wrapper.closed{
+		max-height: 0;
+	}
+	
+}

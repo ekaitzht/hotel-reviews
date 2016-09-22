@@ -1,0 +1,13 @@
+<div class="positive-wrapper">
+	<div class="positive" *ngIf="review.positive">+</div>
+	<div class="negative" *ngIf="!review.positive">-</div>
+</div>
+<div>
+	<div class="name">
+		{{review.name}}
+	</div>
+	<div class="comment">
+		{{review.comment}}
+	</div>
+
+</div>
