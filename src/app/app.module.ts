@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ReviewComponent } from './review/review.component';
+import { DatePipe } from './list-item/date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ListItemComponent,
-    ReviewComponent
+    ReviewComponent,
+    DatePipe
   ],
   imports: [
     BrowserModule,
